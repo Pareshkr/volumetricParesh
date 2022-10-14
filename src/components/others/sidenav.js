@@ -25,7 +25,7 @@ export default function SideNav() {
         <div className="overflow-y-auto overflow-x-hidden flex flex-col justify-between ">
           <div className="flex flex-col mt-3 py-4 space-y-2  border-b-2 border-white-200">
             <div>
-        
+            <NavLink to={`/dashboard`}>
                 <p className="relative flex flex-row  items-center h-9 px-6 focus:outline-none dark:hover:bg-gray-300 text-white hover:bg-gray-200 hover:w-96 hover:z-20  focus:bg-blue-500 focus:text-white pr-6 ">
                   <span className="inline-flex justify-center items-center ml-2 ">
                     <VscGraphLine className="text-purple-800 font-medium	 text-md" />
@@ -34,7 +34,7 @@ export default function SideNav() {
                     Dashboard
                   </span>
                 </p>
-           
+                </NavLink>
             </div>
 
             <div>
