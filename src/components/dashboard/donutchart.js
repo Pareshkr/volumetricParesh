@@ -3,7 +3,10 @@ import Chart from "react-apexcharts";
 export default function DonutChart() {
   const donutChart = {
     series: {
-      data: [44, 55, 13],
+      data: [20467, 10700, 8999, 30675],
+    },
+    chartOptions: {
+      labels: ["Apple", "Mango", "Orange", "Watermelon"],
     },
     options: {
       chart: {
@@ -12,6 +15,39 @@ export default function DonutChart() {
       },
       dataLabels: {
         enabled: false,
+      },
+      plotOptions: {
+        pie: {
+          donut: {
+            size: "80%",
+            labels: {
+              show: false,
+              name: {
+                show: true,
+                fontSize: '22px',
+                fontFamily: 'Helvetica, Arial, sans-serif',
+                fontWeight: 600,
+                color: undefined,
+                offsetY: -10,
+                formatter: function (val) {
+                  return val
+                }
+              },
+              value: {
+                show: true,
+                fontSize: '16px',
+                fontFamily: 'Helvetica, Arial, sans-serif',
+                fontWeight: 400,
+                color: undefined,
+                offsetY: 16,
+                formatter: function (val) {
+                  return val
+                }
+              }
+            }
+          },
+          customScale: 0.9,
+        },
       },
       responsive: [
         {
@@ -23,13 +59,20 @@ export default function DonutChart() {
             legend: {
               show: false,
             },
+            
           },
         },
       ],
       legend: {
+        show: true,
         position: "bottom",
         offsetY: 0,
         height: 20,
+        horizontalAlign: "center",
+        customLegendItems: ["D15", "D9", "D27", "Others"],
+        onItemHover: {
+          highlightDataSeries: true,
+        },
       },
     },
   };
@@ -44,6 +87,7 @@ export default function DonutChart() {
           <Chart
             options={donutChart.options}
             series={donutChart.series.data}
+            chartOptions={donutChart.chartOptions}
             type="donut"
             height={270}
           />

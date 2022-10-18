@@ -5,8 +5,8 @@ export default function LineChart() {
   const areaData = {
     series: [
       {
-        name: "series1",
-        data: [31, 40, 28, 51, 42, 109, 100],
+        name: "Volume",
+        data: [3167, 4089, 2845, 5199, 4232, 10954, 10056],
       },
     ],
     options: {
@@ -22,6 +22,9 @@ export default function LineChart() {
       },
       xaxis: {
         type: "datetime",
+        title: {
+          text: "Time in hr"
+        },
         categories: [
           "2018-09-19T00:00:00.000Z",
           "2018-09-19T01:30:00.000Z",
@@ -31,6 +34,12 @@ export default function LineChart() {
           "2018-09-19T05:30:00.000Z",
           "2018-09-19T06:30:00.000Z",
         ],
+      },
+      yaxis: {
+        title: {
+          text: "Volume in cm3"
+        }
+
       },
       tooltip: {
         x: {
@@ -44,7 +53,7 @@ export default function LineChart() {
     <>
       <div className="w-full h-full rounded-md shadow-md bg-white">
         <div className="w-full h-1/6 pl-4 flex font-semibold text-lg text-gray-600 border-b-2">
-          <span className="self-center">Volume processed</span>
+          <span className="self-center">Volume processed in cm<sup>3</sup></span>
         </div>
         <div className="w-full h-5/6">
           <Chart
