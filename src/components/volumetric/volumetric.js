@@ -28,7 +28,7 @@ export default function Volumetric() {
           <div className="w-2/5 h-full flex flex-col justify-between">
             <div className="w-full h-12 shadow-md rounded-md font-black flex justify-around">
             <div className="w-full h-full font-extrabold text-2xl flex">
-                <span className="self-center pl-2 text-gray-700">Results</span>
+                <span className="self-center pl-2 text-gray-700 tracking-wider">Results</span>
             </div>
             </div>
             <div className=" rounded-md shadow-md h-3/6   ">

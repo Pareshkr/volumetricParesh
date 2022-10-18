@@ -28,7 +28,7 @@ export default function Login() {
               </div>
 
               <div>
-                <NavLink to={`/volumetric`}>
+                <NavLink to={`/dashboard`}>
                   <button
                     // onClick={loginAction}
                     type="submit"
