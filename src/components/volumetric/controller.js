@@ -1,7 +1,23 @@
 import React from 'react';
-
+import axios from 'axios';
 
 export default function Controller () {
+
+  const onSubmitStop = async() => {
+    try{
+      const res= await axios.get("http://127.0.0.1:9990/camera/preview",{
+        headers: {
+          Accept: "application/json",
+        },
+      })
+      if(res) {
+        console.log("video stop")
+      }
+      
+    } catch (error) {
+      console.log(error)
+    }
+  }
 
     return (
          <>
@@ -20,7 +36,7 @@ export default function Controller () {
                   <button className='w-24 bg-green-600 h-10  text-white font-bold text-md rounded-lg '>
                     START
                   </button>
-                  <button className='w-24 bg-red-600 h-10  text-white font-bold text-md rounded-lg '>
+                  <button onClick={onSubmitStop} className='w-24 bg-red-600 h-10  text-white font-bold text-md rounded-lg '>
                     STOP
                   </button>
                 </div>

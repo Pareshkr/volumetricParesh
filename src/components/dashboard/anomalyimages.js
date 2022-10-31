@@ -5,6 +5,11 @@ import ImageListItemBar from "@mui/material/ImageListItemBar";
 import Dialog from "@mui/material/Dialog";
 import DialogContent from "@mui/material/DialogContent";
 import ListSubheader from "@mui/material/ListSubheader";
+import D0 from "../image/D0.jpg";
+import D1 from "../image/D1.jpg";
+import D19 from "../image/D19.jpg";
+import D23 from "../image/D23.jpg";
+
 
 export default function AnomalyImages() {
   const [open, setOpen] = useState(false);
@@ -21,26 +26,26 @@ export default function AnomalyImages() {
 
   const itemData = [
     {
-      img: "https://images.unsplash.com/photo-1551963831-b3b1ca40c98e",
-      class: "D21",
+      img: D0,
+      class: "D0",
       time: "11:43 17-10-22",
       rows: 2,
       cols: 2,
       featured: true,
     },
     {
-      img: "https://images.unsplash.com/photo-1551782450-a2132b4ba21d",
-      class: "D14",
+      img: D1,
+      class: "D1",
       time: "12:15 17-10-22",
     },
     {
-      img: "https://images.unsplash.com/photo-1522770179533-24471fcdba45",
-      class: "D32",
+      img: D19,
+      class: "D19",
       time: "13:38 17-10-22",
     },
     {
-      img: "https://images.unsplash.com/photo-1444418776041-9c7e33cc5a9c",
-      class: "D9",
+      img: D23,
+      class: "D23",
       time: "14:05 17-10-22",
       cols: 2,
     },
@@ -49,7 +54,7 @@ export default function AnomalyImages() {
   const allItemData = [
     {
       img: "https://images.unsplash.com/photo-1551963831-b3b1ca40c98e",
-      class: "D21",
+      class: "D0",
       time: "11:43 17-10-22",
       rows: 2,
       cols: 2,

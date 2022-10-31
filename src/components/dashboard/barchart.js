@@ -1,155 +1,177 @@
 import React from "react";
 import Chart from "react-apexcharts";
-export default function BarChart() {
+export default function BarChart(props) {
+
+  const data = props.data;
+  // console.log("barChart data", data)
+  let boxData = ""
+  if(data) {
+    boxData = data.data.Box_wise;
+  }
+  console.log("BOX DATA",boxData)
   const barGraph = {
     series: [
       {
         name: "Box count",
         data: [
           {
+            x: "D0",
+            y: boxData.D0,
+          },
+          {
             x: "D1",
-            y: 18,
+            y: boxData.D1,
           },
           {
             x: "D2",
-            y: 25,
+            y: boxData.D2,
           },
           {
             x: "D3",
-            y: 73,
+            y: boxData.D3,
           },
           {
             x: "D4",
-            y: 12,
+            y: boxData.D4,
           },
           {
             x: "D5",
-            y: 54,
+            y: boxData.D5,
           },
           {
             x: "D6",
-            y: 96,
+            y: boxData.D6,
           },
           {
             x: "D7",
-            y: 23,
+            y: boxData.D7,
           },
           {
             x: "D8",
-            y: 45,
+            y: 0,
           },
           {
             x: "D9",
-            y: 31,
+            y: 0,
           },
           {
             x: "D10",
-            y: 65,
+            y: 0,
           },
           {
             x: "D11",
-            y: 19,
+            y: 0,
           },
           {
             x: "D12",
-            y: 80,
+            y: 0,
           },
           {
             x: "D13",
-            y: 85,
+            y: 0,
           },
           {
             x: "D14",
-            y: 24,
+            y: 0,
           },
           {
             x: "D15",
-            y: 72,
+            y: 0,
           },
           {
             x: "D16",
-            y: 31,
+            y: 0,
           },
           {
             x: "D17",
-            y: 55,
+            y: 0,
           },
           {
             x: "D18",
-            y: 17,
+            y: 0,
           },
           {
             x: "D19",
-            y: 64,
+            y: 0,
           },
           {
             x: "D20",
-            y: 98,
+            y: 0,
           },
           {
             x: "D21",
-            y: 26,
+            y: 0,
           },
           {
             x: "D22",
-            y: 84,
+            y: 0,
           },
           {
             x: "D23",
-            y: 78,
+            y: 0,
           },
           {
             x: "D24",
-            y: 67,
+            y: 0,
           },
           {
             x: "D25",
-            y: 79,
+            y: 0,
           },
           {
             x: "D26",
-            y: 40,
+            y: 0,
           },
           {
             x: "D27",
-            y: 39,
+            y: 0,
           },
           {
             x: "D28",
-            y: 89,
+            y: 0,
           },
           {
             x: "D29",
-            y: 72,
+            y: 0,
           },
           {
             x: "D30",
-            y: 16,
+            y: 0,
           },
           {
             x: "D31",
-            y: 47,
+            y: 0,
           },
           {
             x: "D32",
-            y: 28,
+            y: 0,
           },
           {
             x: "D33",
-            y: 99,
+            y: 0,
           },
           {
             x: "D34",
-            y: 74,
+            y: 0,
           },
           {
             x: "D35",
-            y: 43,
+            y: 0,
           },
         ],
       },
     ],
     options: {
+      fill: {
+        type: "gradient",
+        gradient: {
+          type: "vertical",
+          gradientToColors: ["#6ee7b7"],
+          opacityFrom: 1,
+          opacityTo: 1,
+          stops: [0, 100, 100, 100],
+        },
+      },
       xaxis: {
         type: "category",
       },
@@ -163,29 +185,18 @@ export default function BarChart() {
           borderRadius: 4,
           dataLabels: {
             position: "top",
-            orientation: "vertical"
+            orientation: "vertical",
           },
           columnWidth: "50%",
         },
         dataLabels: {
           enabled: true,
-          formatter: function (val) {
-            return val;
-          },
-          offsetY: -200,
-          style: {
-            fontSize: '12px',
-            colors: ["#304758"]
-          }
         },
       },
       stroke: {
         show: false,
         width: 1,
         colors: ["transparent"],
-      },
-      fill: {
-        opacity: 1,
       },
       tooltip: {
         y: {

@@ -1,12 +1,33 @@
 import React from "react";
 import Chart from "react-apexcharts";
 
-export default function LineChart() {
+export default function LineChart(props) {
+
+  // API integration  
+  const data = props.data;  // get the data from dashboard component 
+  
+  console.log("line data ",data)
+  let dateString = "";
+  let valueofData = "";
+  if(data) {
+    // console.log(Object.keys(data.data))
+  dateString=Object.keys(data.data.total_volume_time)
+  valueofData= Object.values(data.data.total_volume_time)
+  console.log( typeof(Object.values(data.data.total_volume_time)))
+  
+  }
+  
+
+  
+
+
+
+
   const areaData = {
     series: [
       {
         name: "Volume",
-        data: [3167, 4089, 2845, 5199, 4232, 10954, 10056],
+        data: valueofData,
       },
     ],
     options: {
@@ -14,6 +35,7 @@ export default function LineChart() {
         height: 350,
         type: "area",
       },
+      colors: [ "#fb923c"],
       dataLabels: {
         enabled: false,
       },
@@ -23,21 +45,13 @@ export default function LineChart() {
       xaxis: {
         type: "datetime",
         title: {
-          text: "Time in hr"
+          text: "Time"
         },
-        categories: [
-          "2018-09-19T00:00:00.000Z",
-          "2018-09-19T01:30:00.000Z",
-          "2018-09-19T02:30:00.000Z",
-          "2018-09-19T03:30:00.000Z",
-          "2018-09-19T04:30:00.000Z",
-          "2018-09-19T05:30:00.000Z",
-          "2018-09-19T06:30:00.000Z",
-        ],
+        categories: dateString,
       },
       yaxis: {
         title: {
-          text: "Volume in cm3"
+          text: "Volume"
         }
 
       },
@@ -49,11 +63,13 @@ export default function LineChart() {
     },
   };
 
+
+
   return (
     <>
       <div className="w-full h-full rounded-md shadow-md bg-white">
         <div className="w-full h-1/6 pl-4 flex font-semibold text-lg text-gray-600 border-b-2">
-          <span className="self-center">Volume processed in cm<sup>3</sup></span>
+          <span className="self-center">Volume processed (cm<sup>3</sup>)</span>
         </div>
         <div className="w-full h-5/6">
           <Chart

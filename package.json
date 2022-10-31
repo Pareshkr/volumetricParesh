@@ -26,7 +26,8 @@
     "styled-components": "^5.3.6",
     "web-vitals": "^2.1.4",
     "webfontloader": "^1.6.28",
-    "websocket": "^1.0.34"
+    "websocket": "^1.0.34",
+    "zingchart": "^2.9.10"
   },
   "scripts": {
     "start": "react-scripts start",

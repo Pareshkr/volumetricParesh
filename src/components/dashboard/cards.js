@@ -4,9 +4,12 @@ import { IoSpeedometerSharp } from "react-icons/io5";
 import { FaCube } from "react-icons/fa";
 import { RiErrorWarningFill } from "react-icons/ri";
 
-export default function Cards() {
+export default function Cards(props) {
+  const data = props.data;
+  
   return (
     <>
+    {data && (
       <div className="w-full h-full flex justify-between space-x-6">
         <div className="w-1/4 h-full text-center hover:bg-gray-100 bg-white rounded-md shadow-md flex justify-center space-x-3">
           <div className="w-3/12 h-3/5 flex justify-between self-center bg-violet-300 rounded-full">
@@ -14,11 +17,11 @@ export default function Cards() {
               <FaBox />
             </div>
           </div>
-          <div className="w-6/12 h-3/5 self-center flex flex-col space-between space-y-1 pl-2">
+          <div className="w-7/12 h-3/5 self-center flex flex-col space-between space-y-1 pl-2">
             <div className="w-full h-1/2 text-left font-bold text-2xl">
-              2034
+             {data.data.totol_box}
             </div>
-            <div className="w-full h-1/2 text-left font-semibold text-md text-gray-600">
+            <div className="w-full h-1/2 text-left font-bold text-lg text-gray-600">
               Boxes Profiled
             </div>
           </div>
@@ -29,10 +32,12 @@ export default function Cards() {
               <IoSpeedometerSharp />
             </div>
           </div>
-          <div className="w-6/12 h-3/5 self-center flex flex-col space-between space-y-1 pl-2">
+          <div className="w-7/12 h-3/5 self-center flex flex-col space-between space-y-1 pl-2">
             <div className="w-full h-1/2 text-left font-bold text-2xl">420</div>
-            <div className="w-full h-1/2 text-left font-semibold text-md text-gray-600">
+            <div className="w-full h-1/2 text-left  text-gray-600"><span className="font-bold text-lg">
               Throughput
+              </span>
+              <span className="font-semibold text-md"> (per hr)</span>
             </div>
           </div>
         </div>
@@ -42,12 +47,15 @@ export default function Cards() {
               <FaCube />
             </div>
           </div>
-          <div className="w-6/12 h-3/5 self-center flex flex-col space-between space-y-1 pl-2">
+          <div className="w-7/12 h-3/5 self-center flex flex-col space-between space-y-1 pl-2">
             <div className="w-full h-1/2 text-left font-bold text-2xl">
-              15378
+            {data.data.total_volume.toFixed(2)}
             </div>
-            <div className="w-full h-1/2 text-left font-semibold text-md text-gray-600">
+            <div className="w-full h-1/2 text-left  text-gray-600">
+              <span className="font-bold text-lg">
               Total Volume
+              </span>
+              <span className="font-semibold text-md"> (cm<sup>3</sup>)</span>
             </div>
           </div>
         </div>
@@ -57,14 +65,14 @@ export default function Cards() {
               <RiErrorWarningFill />
             </div>
           </div>
-          <div className="w-6/12 h-3/5 self-center flex flex-col space-between space-y-1 pl-2">
+          <div className="w-7/12 h-3/5 self-center flex flex-col space-between space-y-1 pl-2">
             <div className="w-full h-1/2 text-left font-bold text-2xl">12</div>
-            <div className="w-full h-1/2 text-left font-semibold text-md text-gray-600">
+            <div className="w-full h-1/2 text-left font-bold text-lg text-gray-600">
               Anomalies
             </div>
           </div>
         </div>
-      </div>
+      </div>)}
     </>
   );
 }
